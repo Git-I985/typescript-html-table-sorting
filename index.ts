@@ -70,11 +70,19 @@ const initTableSorting = (
   });
 };
 
+const emptyComparator = (row1, row2, order) => 0;
+
 const comparators: Comparator[] = [
   (row1, row2, order) => {
     return order
       ? parseInt(row1.cells[0].innerText) - parseInt(row2.cells[0].innerText)
       : parseInt(row2.cells[0].innerText) - parseInt(row1.cells[0].innerText);
+  },
+  emptyComparator,
+  (row1, row2, order) => {
+    return order
+      ? parseInt(row1.cells[2].innerText) - parseInt(row2.cells[2].innerText)
+      : parseInt(row2.cells[2].innerText) - parseInt(row1.cells[2].innerText);
   },
 ];
 
