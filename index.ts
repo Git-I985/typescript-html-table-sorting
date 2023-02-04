@@ -49,6 +49,7 @@ const createTableSorter =
     comparators: Comparator[]
   ): TableSorter =>
   (columnIndex, order) => {
+    if (!comparators[columnIndex]) return;
     const rows = table.querySelectorAll('tr');
     sortRows(rows, order, comparators[columnIndex]).forEach((row) => {
       table.appendChild(row);
