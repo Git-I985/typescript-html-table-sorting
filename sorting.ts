@@ -33,7 +33,7 @@ const createTableSortHeaderClickHandler = (
   let order: Order = true;
 
   return (e) => {
-    const tableColumnHeader = e.target as HTMLTableCellElement;
+    const tableColumnHeader = e.currentTarget as HTMLTableCellElement;
 
     const tableColumnHeaderIdx: ColumnIndex = Array.from(
       tableColumnHeader.parentNode.children
