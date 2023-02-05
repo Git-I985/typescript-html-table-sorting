@@ -63,7 +63,7 @@ export const initTableSorting = (
   comparators: Comparator[]
 ) => {
   const tableHeaders = table.querySelectorAll('thead th');
-  const sortByColumn = createTableSorter(table, comparators);
+  const sortByColumn = createTableSorter(table.querySelector('tbody'), comparators);
   tableHeaders.forEach((tableHeader) => {
     tableHeader.addEventListener(
       'click',
